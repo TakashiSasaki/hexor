@@ -16,8 +16,29 @@ class Hexor:
                 hexstring = fields[0]
                 self.hexs.append(hexstring)
 
+    def getXor(self):
+        if len(self.hexs) == 0:
+            raise "At least one file should be given."
+        hexLength = len(self.hexs[0])
+        accum = "0" * hexLength
+        for hex in self.hexs:
+            if len(hex) != hexLength:
+                raise "All hex string should have the same length."
+            accum = xorHexs(accum, hex)
+        return accum
+
     def getHexs(self):
         return self.hexs
+
+def xorHexs(xx, yy):
+    result = ""
+    for i in range(len(xx)):
+        result += xorChars(xx[i], yy[i]) 
+    return result
+
+
+def xorChars(x, y):
+    pass
 
 if __name__ == "__main__":
     args = sys.argv
