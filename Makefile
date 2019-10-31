@@ -1,3 +1,6 @@
+help:
+	# make test
+	# make ntpdate
 test:
 	$(MAKE) -C testdata
 	./hexor.py -h testdata/bin1.md5 testdata/bin2.md5 testdata/bin3.md5
