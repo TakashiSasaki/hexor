@@ -9,3 +9,4 @@ test:
 
 ntpdate:
 	ntpdate ntp.nict.jp
+
